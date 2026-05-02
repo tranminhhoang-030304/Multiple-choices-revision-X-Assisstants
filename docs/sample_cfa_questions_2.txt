@@ -1,0 +1,297 @@
+Q: An interest rate can be interpreted as the rate of return required by an investor to postpone current consumption. In this context, it is best described as:
+A: An opportunity cost.
+B: A required rate of return.
+C: A discount rate.
+D: 
+ANSWER: B
+EXPLANATION: Tỷ suất sinh lợi yêu cầu (Required rate of return) là mức sinh lợi tối thiểu mà nhà đầu tư cần để sẵn sàng đầu tư, nhằm bù đắp cho việc hy sinh sự tiêu dùng ở hiện tại.  
+
+---
+
+Q: Which of the following components best describes the nominal risk-free interest rate?
+A: The sum of the real risk-free rate and the default risk premium.
+B: The sum of the real risk-free rate and the inflation premium.
+C: The sum of the real risk-free rate and the liquidity premium.
+D: 
+ANSWER: B
+EXPLANATION: Lãi suất phi rủi ro danh nghĩa (Nominal risk-free rate) được tính bằng tổng của lãi suất phi rủi ro thực (Real risk-free rate) và phần bù lạm phát (Inflation premium). Nó không bao gồm rủi ro vỡ nợ hay rủi ro thanh khoản.  
+
+---
+
+Q: The additional yield that investors demand for the risk that the issuer of a debt instrument may fail to make scheduled payments is called the:
+A: Default risk premium.
+B: Liquidity premium.
+C: Maturity premium.
+D:
+ANSWER: A
+EXPLANATION: Phần bù rủi ro vỡ nợ (Default risk premium) là phần bù lợi suất để đền bù cho rủi ro tổ chức phát hành có thể không trả được gốc hoặc lãi đúng hạn.  
+
+---
+
+Q: Small-cap stocks and real estate typically require a higher expected return compared to large-cap stocks. This additional required return is most likely a:
+A: Maturity risk premium.
+B: Liquidity premium.
+C: Default risk premium.
+D: 
+ANSWER: B
+EXPLANATION: Phần bù thanh khoản (Liquidity premium) áp dụng cho các tài sản khó chuyển đổi nhanh chóng thành tiền mặt mà không làm giảm giá trị đáng kể, chẳng hạn như cổ phiếu vốn hóa nhỏ hay bất động sản.  
+
+---
+
+Q: When an investor chooses to save money at a 10% interest rate instead of spending it immediately, the 10% rate represents what they give up by not consuming. This is best described as a(n):
+A: Discount rate.
+B: Opportunity cost.
+C: Real risk-free rate.
+D: 
+ANSWER: B
+EXPLANATION: Theo định nghĩa về giá trị thời gian của tiền, chi phí cơ hội (Opportunity cost) là chi phí của sự lựa chọn bị bỏ lỡ. Ở đây là phần lợi suất 10% bị mất đi nếu tiêu tiền thay vì tiết kiệm.  
+
+---
+
+Q: Long-term bonds of a company face the risk that their market value is highly sensitive to changes in market interest rates over an extended period. To compensate for this, investors demand a:
+A: Maturity risk premium.
+B: Liquidity risk premium.
+C: Inflation premium.
+D: 
+ANSWER: A
+EXPLANATION: Phần bù rủi ro đáo hạn (Maturity premium) đền bù cho việc giá trị thị trường của trái phiếu dài hạn nhạy cảm hơn trước sự thay đổi của lãi suất thị trường.  
+
+---
+
+Q: An investor buys a stock for $50. Over the year, the stock pays a $2 dividend, and its price at the end of the year is $55. The holding period return (HPR) is closest to:
+A: 10.0%
+B: 14.0%
+C: 4.0%
+D: 
+ANSWER: B
+EXPLANATION: HPR = [(Giá cuối kỳ - Giá đầu kỳ) + Cổ tức] / Giá đầu kỳ = (55 - 50 + 2) / 50 = 7 / 50 = 14%.  
+
+---
+
+Q: A portfolio has the following annual returns over three years: Year 1: +10%, Year 2: -5%, Year 3: +15%. The three-year cumulative holding period return is closest to:
+A: 20.00%
+B: 20.18%
+C: 20.75%
+D: 
+ANSWER: B
+EXPLANATION: Lợi suất lũy kế (Cumulative HPR) = [(1 + 0.10) * (1 - 0.05) * (1 + 0.15)] - 1 = 1.20175 - 1 = 20.175% (gần với 20.18%).  
+
+---
+
+Q: When averaging the prices per share at different purchase dates for a cost averaging strategy (investing a fixed amount of money periodically), the most appropriate measure of central tendency is the:
+A: Arithmetic mean.
+B: Geometric mean.
+C: Harmonic mean.
+D: 
+ANSWER: C
+EXPLANATION: Trung bình điều hòa (Harmonic mean) là thước đo phù hợp nhất khi tính giá trung bình trong chiến lược trung bình giá (cost averaging) khi số tiền đầu tư cố định qua các kỳ.  
+
+---
+
+Q: Which measure of mean replaces the extreme observations in a dataset with the values of their nearest non-extreme observations to limit the influence of outliers?
+A: Trimmed mean.
+B: Winsorized mean.
+C: Harmonic mean.
+D: 
+ANSWER: B
+EXPLANATION: Winsorized mean thay thế các giá trị ngoại lai (outliers) bằng giá trị của các quan sát bình thường gần nhất, thay vì loại bỏ chúng hoàn toàn như Trimmed mean.  
+
+---
+
+Q: A portfolio generated the following annual returns over 4 years: 5%, 8%, 10%, and 6%. The arithmetic mean return is closest to:
+A: 7.25%
+B: 8.00%
+C: 6.50%
+D: 
+ANSWER: A
+EXPLANATION: Arithmetic mean = Tổng các lợi suất / Số năm = (5% + 8% + 10% + 6%) / 4 = 29% / 4 = 7.25%.  
+
+---
+
+Q: Why is the geometric mean return generally preferred over the arithmetic mean return for evaluating the historical performance of an investment portfolio?
+A: It is less computationally demanding.
+B: It correctly accounts for the compounding effect of returns.
+C: It completely eliminates the impact of extreme outliers.
+D: 
+ANSWER: B
+EXPLANATION: Trung bình nhân (Geometric mean) đo lường chính xác tác động của hiệu ứng lãi kép (compounding effect) theo thời gian, điều mà trung bình cộng (Arithmetic mean) không làm được.  
+
+---
+
+Q: An investor invests $1,000 every month in a stock. The prices per share in three consecutive months are $50, $40, and $60. The harmonic mean price per share is closest to:
+A: $48.67
+B: $50.00
+C: $49.33
+D: 
+ANSWER: A
+EXPLANATION: Harmonic Mean = 3 / [(1/50) + (1/40) + (1/60)] = 3 / 0.06167 = 48.65 (hoặc 48.67 tuỳ làm tròn ở bước chia).  
+
+---
+
+Q: The rate of return that equates the present value of a portfolio's cash inflows with the present value of its cash outflows is defined as the:
+A: Time-weighted return.
+B: Money-weighted return.
+C: Geometric mean return.
+D: 
+ANSWER: B
+EXPLANATION: Tỷ suất sinh lời gia quyền theo tiền (Money-weighted return) chính là Tỷ suất sinh lời nội bộ (IRR), cân bằng PV của dòng tiền vào và dòng tiền ra.  
+
+---
+
+Q: Which return measure is preferred for evaluating the performance of a mutual fund manager who does not have control over the timing of cash inflows and outflows?
+A: Holding period return.
+B: Money-weighted return.
+C: Time-weighted return.
+D: 
+ANSWER: C
+EXPLANATION: Tỷ suất sinh lời gia quyền theo thời gian (Time-weighted return) là thước đo phù hợp để đánh giá người quản lý quỹ vì nó loại bỏ tác động của việc nạp và rút tiền.  
+
+---
+
+Q: If an investor deposits funds into a portfolio just before a period of exceptionally high returns, how will the money-weighted rate of return (MWR) compare to the time-weighted rate of return (TWR)?
+A: MWR will tend to be higher than TWR.
+B: MWR will tend to be lower than TWR.
+C: MWR will be equal to TWR.
+D: 
+ANSWER: A
+EXPLANATION: Nếu tiền được nạp vào ngay trước khi quỹ đạt lợi suất cao, một lượng vốn lớn hơn sẽ tận hưởng mức lãi cao đó, kéo MWR lên cao hơn so với TWR.  
+
+---
+
+Q: When calculating the time-weighted rate of return method for a portfolio with multiple cash flows, what is the required first step?
+A: Calculate the internal rate of return for the whole period.
+B: Break the evaluation period into subperiods based on the exact timing of cash flows.
+C: Sum up all cash inflows and outflows to find the net change.
+D: 
+ANSWER: B
+EXPLANATION: Bước đầu tiên của phương pháp TWR là chia thời gian đánh giá thành các kỳ nhỏ (subperiods) dựa trên các thời điểm xảy ra dòng tiền (nạp/rút).  
+
+---
+
+Q: An investor holds a stock that yields a return of 6.40% in period 1 and 4.23% in period 2 after a new deposit. The annualized time-weighted return across these two periods is closest to:
+A: 5.31%
+B: 10.90%
+C: 5.12%
+D: 
+ANSWER: A
+EXPLANATION: TWR (Annualized) = [(1.0640) * (1.0423)]^(1/2) - 1 = [1.1090]^0.5 - 1 = 5.308% (xấp xỉ 5.31%).  
+
+---
+
+Q: Money-weighted return is often criticized as a performance metric for mutual funds because:
+A: It does not account for the compounding of returns.
+B: It is highly sensitive to the size and timing of cash deposits and withdrawals.
+C: It requires an equal weighting for each period's return.
+D: 
+ANSWER: B
+EXPLANATION: MWR chịu ảnh hưởng rất lớn từ quy mô và thời điểm dòng tiền ra/vào. Vì người quản lý quỹ không kiểm soát việc khách hàng nạp/rút, MWR không phản ánh chính xác năng lực của họ.  
+
+---
+
+Q: An investor buys a share for $200 at t=0. At t=1, she receives a $4 dividend and buys a second share for $240. At t=2, she receives $8 in dividends and sells both shares for $260 each. Using the IRR approach, the money-weighted return is closest to:
+A: 11.5%
+B: 13.86%
+C: 15.2%
+D: 
+ANSWER: B
+EXPLANATION: Theo ví dụ sách giáo khoa Zell: CF0 = -200. Ở t=1, nhận 4 (cổ tức) trừ 240 (mua thêm) = nạp ròng 236. Ở t=2 rút 512. Tương đương IRR = 13.86%.  
+
+---
+
+Q: A portfolio experiences a loss of 4% over a 90-day period. The annualized return (assuming a 365-day year) is closest to:
+A: -14.50%
+B: -15.25%
+C: -16.22%
+D: 
+ANSWER: B
+EXPLANATION: Lợi suất hàng năm hóa (Annualized return) = (1 - 0.04)^(365/90) - 1 = 0.96^4.0556 - 1 = -15.25%.  
+
+---
+
+Q: A stock's initial price is $50 and its price increases to $62 over a period. The continuously compounded rate of return is closest to:
+A: 21.51%
+B: 24.00%
+C: 19.45%
+D: 
+ANSWER: A
+EXPLANATION: Lợi suất gộp liên tục (Continuously compounded return) = ln(Giá trị cuối / Giá trị đầu) = ln(62/50) = 21.51%.  
+
+---
+
+Q: Suppose you invest $1,000 in a savings account that pays a 5% stated annual interest rate, compounded monthly. After one year, the future value is closest to:
+A: $1,050.00
+B: $1,051.16
+C: $1,055.20
+D: 
+ANSWER: B
+EXPLANATION: Future Value = 1,000 * (1 + 0.05/12)^(12*1) = 1,000 * (1.0041667)^12 = $1,051.16.  
+
+---
+
+Q: A stock generates a quarterly return of 2.00%. The annualized return for this stock is closest to:
+A: 8.00%
+B: 8.24%
+C: 8.42%
+D: 
+ANSWER: B
+EXPLANATION: Một năm có 4 quý. Lợi suất hàng năm hóa = (1 + 0.02)^4 - 1 = 1.0824 - 1 = 8.24%.  
+
+---
+
+Q: When annualizing a return that is calculated for a holding period of a specific number of days, the periodic return must be compounded by an exponent equal to:
+A: 12 divided by the number of months.
+B: 365 divided by the number of days.
+C: 360 divided by the number of days.
+D: 
+ANSWER: B
+EXPLANATION: Theo tài liệu, lợi suất hàng ngày được gộp 365 lần 1 năm. Đối với số ngày lẻ bất kỳ, ta mũ nó với tỷ lệ 365 / số ngày nắm giữ.  
+
+---
+
+Q: The total return on a security portfolio before deducting fees for the management and administration of the investment account is defined as the:
+A: Gross return.
+B: Net return.
+C: Pre-tax nominal return.
+D: 
+ANSWER: A
+EXPLANATION: Lợi suất gộp (Gross return) là tổng mức sinh lời trước khi khấu trừ các khoản phí hành chính và phí quản lý tài khoản.  
+
+---
+
+Q: If an investment earns a nominal return of 12.00% and the inflation rate over the same period is 3.00%, the real return is closest to:
+A: 9.00%
+B: 8.74%
+C: 9.27%
+D: 
+ANSWER: B
+EXPLANATION: (1 + Lợi suất thực) = (1 + Lợi suất danh nghĩa) / (1 + Lạm phát) = 1.12 / 1.03 = 1.08737. Do đó Lợi suất thực = 8.74%.  
+
+---
+
+Q: An investment in a futures contract produces a return that is a multiple of the return on the underlying asset because the required cash deposit is only a fraction of the contract's value. This is an example of a:
+A: Real return.
+B: Leveraged return.
+C: Net return.
+D: 
+ANSWER: B
+EXPLANATION: Lợi suất đòn bẩy (Leveraged return) hình thành do sử dụng đòn bẩy tài chính (ví dụ hợp đồng tương lai), làm khuếch đại mức sinh lời so với tỷ lệ thay đổi giá trị tài sản.  
+
+---
+
+Q: An investment portfolio has a gross return of $3 million on an initial $10 million investment. The fund manager charges $500,000 as an expense ratio. The net return is:
+A: $3.5 million.
+B: $3.0 million.
+C: $2.5 million.
+D: 
+ANSWER: C
+EXPLANATION: Lợi suất ròng (Net return) bằng lợi suất gộp trừ đi các khoản phí quản lý. $3 triệu - $0.5 triệu = $2.5 triệu.  
+
+---
+
+Q: Which return measure provides the best insight into the true increase in an investor's purchasing power over time?
+A: After-tax nominal return.
+B: Real return.
+C: Leveraged return.
+D: 
+ANSWER: B
+EXPLANATION: Lợi suất thực (Real return) là lợi suất đã loại bỏ tác động của lạm phát. Nó phản ánh chân thực nhất về sự gia tăng sức mua của tiền.

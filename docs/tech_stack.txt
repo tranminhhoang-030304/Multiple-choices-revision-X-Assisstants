@@ -1,0 +1,35 @@
+Dưới đây là bản tổng hợp chi tiết về bức tranh công nghệ (Tech Stack) đang được sử dụng trong dự án của bạn, dựa trên cấu hình package.json và mã nguồn hiện tại. Dự án này được thiết kế theo kiến trúc Full-stack Monorepo (gộp chung FE và BE chạy trên cùng một tiến trình NodeJS thông qua cơ chế SSR/Middleware của Vite).
+1. Môi trường chạy & Công cụ phát triển (DevTools)
+- NodeJS: v20.18.0 (Môi trường Runtime chính).
+- TypeScript: ~5.8.2 (Ngôn ngữ lập trình chính cho cả FE và BE).
+- Vite: v6.2.3 (Công cụ build cực nhanh, đóng vai trò bundle cho frontend và hỗ trợ middleware cho server).
+- vite-node: v5.1.0 (Công cụ thực thi code TypeScript trực tiếp, thay thế cho tsx để tránh đụng độ module ảo của Vite).
+2. Frontend (Giao diện người dùng)
+Mảng Frontend được xây dựng hướng tới hiệu năng cao và giao diện hiện đại:
+- Core Framework:
+	react: ^19.0.1 (Phiên bản React mới nhất hiện nay).
+	react-dom: ^19.0.1
+- Routing (Điều hướng):
+	react-router-dom: ^7.14.2 (Xử lý chuyển trang SPA).
+- Styling (Giao diện & CSS):
+	tailwindcss: ^4.1.14 (Phiên bản Tailwind 4 mới nhất, kết hợp với @tailwindcss/vite).
+	clsx: ^2.1.1 & tailwind-merge: ^3.5.0 (Sử dụng để linh hoạt ghép/nối các class CSS với nhau mà không bị xung đột, thường gói trong hàm cn()).
+- UI Components & Hiệu ứng:
+	lucide-react: ^0.546.0 (Thư viện icon SVG rất đẹp và nhẹ).
+	motion (Framer Motion): ^12.23.24 (Xử lý các hiệu ứng chuyển động animation mượt mà).
+	recharts: ^3.8.1 (Vẽ biểu đồ thống kê trực quan).
+3. Backend (Máy chủ xử lý)
+Backend đóng vai trò cung cấp API, phân tích dữ liệu và tích hợp Trí tuệ nhân tạo (AI):
+- Core Server:
+	express: ^4.21.2 (Framework web server kinh điển của NodeJS).
+	cors: ^2.8.6 (Bảo mật cross-origin cho API).
+	dotenv: ^17.2.3 (Quản lý các biến môi trường từ file .env).
+- Xử lý tệp tin (Files & PDFs):
+	multer: ^2.1.1 (Middleware chuyên dụng để tiếp nhận file upload lên server).
+	pdf-parse: ^2.4.5 (Công cụ dùng để trích xuất văn bản (text) thô từ các file PDF tài liệu học tập).
+- Tích hợp Trí tuệ nhân tạo (AI):
+	@google/genai: ^1.29.0 (SDK chính thức của Google, dùng để kết nối với Gemini AI nhằm mục đích tự động tạo ra câu hỏi trắc nghiệm từ nội dung text của file PDF).
+4. Database (Cơ sở dữ liệu)
+- Hệ quản trị CSDL: SQLite (Database dạng file cục bộ, rất nhẹ, không cần cài đặt thêm server DB rời).
+- Thư viện tương tác (Driver):
+better-sqlite3: ^12.9.0 (Đây là một trong những thư viện SQLite cho NodeJS nhanh nhất hiện nay vì nó chạy đồng bộ (synchronous) trên C++ thay vì bất đồng bộ).

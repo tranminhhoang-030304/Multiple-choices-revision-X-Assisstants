@@ -1,0 +1,27 @@
+Q: What is the primary purpose of the Global Investment Performance Standards (GIPS)?
+A: To guarantee the accuracy of investment returns.
+B: To ensure fair representation and full disclosure of investment performance.
+C: To prevent investment firms from losing money.
+D: To regulate the fees charged by investment managers.
+ANSWER: B
+EXPLANATION: GIPS standards are voluntary ethical standards based on the principles of fair representation and full disclosure of an investment firm's performance history.
+
+---
+
+Q: According to the CFA Institute Code of Ethics, members must:
+A: Maximize returns for their clients at all costs.
+B: Place the integrity of the investment profession and the interests of clients above their own personal interests.
+C: Disclose all material nonpublic information to the public immediately.
+D: Only invest in socially responsible companies.
+ANSWER: B
+EXPLANATION: The Code of Ethics explicitly states that members must place the integrity of the investment profession and the interests of clients above their own personal interests.
+
+---
+
+Q: Which of the following is most likely a violation of the Standard relating to Diligence and Reasonable Basis?
+A: Relying on third-party research without verifying the underlying data.
+B: Using a quantitative model to make investment decisions.
+C: Making an investment recommendation based on a rumor.
+D: Failing to keep detailed records of all client communications.
+ANSWER: C
+EXPLANATION: Making recommendations based on rumors lacks a reasonable and adequate basis, which is a clear violation of the Diligence and Reasonable Basis standard.

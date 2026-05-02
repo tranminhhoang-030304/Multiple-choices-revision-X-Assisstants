@@ -1,0 +1,34 @@
+{
+  "questions": [
+    {
+      "question": "Which of the following biases is considered a cognitive error?",
+      "options": [
+        "Loss aversion bias",
+        "Overconfidence bias",
+        "Availability bias"
+      ],
+      "answer": "Availability bias",
+      "explanation": "Availability bias is a cognitive error (information-processing bias) where people estimate the probability of an outcome based on how easily the outcome comes to mind. Loss aversion and overconfidence are emotional biases."
+    },
+    {
+      "question": "In behavioral finance, what does the term 'Mental Accounting' refer to?",
+      "options": [
+        "Evaluating investments based on a single strict mathematical formula.",
+        "Treating different sums of money differently based on where they came from or what they are intended for.",
+        "Refusing to sell a losing stock to avoid realizing a loss."
+      ],
+      "answer": "Treating different sums of money differently based on where they came from or what they are intended for.",
+      "explanation": "Mental accounting is a cognitive bias where individuals categorize and treat money differently depending on its origin and intended use, often leading to irrational financial decisions."
+    },
+    {
+      "question": "A stock is priced at $50. It pays no dividends. An investor buys a call option with a strike price of $55 for a premium of $3. What is the maximum possible loss for the option buyer?",
+      "options": [
+        "$3",
+        "$50",
+        "Unlimited"
+      ],
+      "answer": "$3",
+      "explanation": "For an option buyer (holder), the maximum possible loss is strictly limited to the premium paid for the option, which in this case is $3."
+    }
+  ]
+}

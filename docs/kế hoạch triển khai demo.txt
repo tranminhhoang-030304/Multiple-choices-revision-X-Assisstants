@@ -1,0 +1,49 @@
+Bước 1: Tạo output trên DB (mock data output mong muốn vào DB)
+- Chạy script tạo mock data trên DB (Về sau báo cáo xong môn học, bạn chỉ cần gõ DELETE FROM event_logs WHERE event_type = 'mock_demo_uni'; là Server lại sạch sẽ bóng lộn!)
+- Tiến hành:
+	+ Trước chiến lược: Dùng real data 273k lượt show LosePack nhưng chỉ có 28 lượt mua
+	+ Sau chiến lược: Bạn viết một script INSERT INTO event_logs để tạo ra một lượng data mới với tỷ lệ đẹp hơn. Ví dụ: Tạo ra khoảng 10.000 lượt level_lose ở level 77 và 80. Nhưng chỉ tạo khoảng 1.500 lượt purchase_pop_LosePack_show (đã có Frequency Capping - giảm show), và tạo ra khoảng 50 lượt purchase_pop_LosePack_complete (CVR tăng vọt lên ~3.3%)
+
+Bước 2: Bổ sung tính năng vào giao diện
+Thay vì chỉ hiện biểu đồ, hệ thống của bạn cần cho thấy nó cho phép Admin can thiệp vào chiến lược kinh doanh
+- Code bổ sung 
+- Tiến hành:
+	+ Thêm 1 tab ở sidebar tên là "Campaigns"
+	+ Tạo giao diện cho tab này (hiện chỉ cần UI, API có thể mock) để minh họa việc Marketing/Devops Game thiết lập quy tắc bật popup và điều chỉnh chiến lược cho phù hợp với định hướng và mục tiêu
+	+ Mô tả: Có các ô input/dropdown:
+		*) Target Event: level_lose
+		*) Condition: level > 50 và Consecutive Fails (thua liên tiếp) >= 3
+		*) Action: Show Product LosePack (kèm discount 12-20%)
+		*) Frequency Capping: Max 2 time/day/user
+	+) Chụp màn hình: Chụp lại giao diện mới đưa vào 2.2 để show "hệ thống đã cung cấp công cụ để thực thi và áp dụng chiến lược Contextual Upselling"
+
+Bước 3: Vẽ biểu đồ "Đo lường kết quả" trên Dashboard (FE) để chứng minh chiến lược đã được áp dụng và mang lại kết quả
+- FE (Dashboard hoặc DataExplorer hoặc Campaigns luôn cho đồng bộ (nếu hợp lý))
+- Code bổ sung
+	+ Biểu đồ phễu (Funnel Chart) so sánh kép
+		*) Trái: Phễu LosePack của đợt trước khi áp dụng chiến lược (miệng phễu khổng lồ 273k show nhưng đáy chỉ có vỏn vẹn 28 complete)
+		*) Phải: Phễu LosePack của đợt sau khi áp dụng chiến lược (Miệng phễu gọn gàng và đáy nở ra với tỉ lệ chuyển đổi cân đối và đáng kể)
+	+ Biểu đồ đường (Line Chart) với xu hướng Conversion Rate (CVR)
+		*) Trục X là các tuần (1,2,3,4) và trục Y là tỉ lệ %
+		*) Đường line sẽ rà rà ở mức 0.01% trong giai đoạn trước khi áp dụng chiến lược và tăng lên mức 2-3% ở giai đoạn sau khi áp dụng chiến lược thương mại điện tử
+	+ Chụp màn hình 2 biểu đồ này đưa vào mục 3.1 để show ra kết luận sau khi áp dụng chiến lược thì "chỉ số rác giảm và tỉ lệ chuyển đổi thực chất tăng"
+
+Tóm tắt khối lượng công việc kĩ thuật cần làm thêm để có Demo cho môn "Phân tích chiến lược thương mại điện tử"
+1. Viết 1 file SQL gen mock data cho đợt sau khi áp dụng chiến lược thương mại điện tử (sát với thời điểm hiện tại)
+2. Làm 1 tab "Campaign" chưa cần nhiều logic BE, tập trung vào UI để demo luồng hoạt động triển khai áp dụng chiến lược
+3. Làm 2 biểu đồ (phễu và đường) biểu diễn data mock được sinh ra khi viết file SQL ở mục 
+4. Luồng hoạt động demo cho môn học "Phân tích chiến lược thương mại điện tử" 
+(1) Admin thấy tỉ lệ chuyển đổi thấp (hoặc vấn đề khác)
+(2) Admin dùng tool của hệ thống để tạo ra chiến lược và áp dụng chiến lược đó
+(3) Hệ thống ghi nhận kết quả tích cực hơn sau khi áp dụng chiến lược
+(4) Chiến lược được áp dụng thành công
+
+Ảnh 1: Giao diện Configuration (tab1)
+- Đặt ở 2.2 Triển khai thực hiện chiến lược (mô tả thực thi giải pháp)
+- Ý nghĩa: Visualization cho việc system provide tool for admin để thiết lập chiến lược Contextual Upselling (chọn event, gán điều kiện và thiết lập Frequency Capping
+Ảnh 2: Giao diện Performance report (tab2)
+- Đặt ở 3.1 Ghi nhận kết quả triển khai (minh chứng hệ thống)
+- Ý nghĩa: Visualization kết quả A/B Testing, chứng minh phễu được tối ưu và đường CVR tăng trưởng đúng như cam kết trong KPI
+Ảnh 3: Cửa số DB 
+- Đặt ở 3.1 dưới ảnh 2
+- Ý nghĩa: Minh chứng = 1 đoạn SQL qurry số lượng event _show và _complete trong khoảng thời gian tháng 4 kèm bảng kết quả trả về con số khớp với biểu đồ trên FE là minh chứng hệ thống thật, lấy dữ liệu thật từ DB
