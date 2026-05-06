@@ -7,7 +7,7 @@ import db from './db';
 
 async function startServer() {
   const app = express();
-  const PORT = process.env.PORT || 3000;
+  const PORT = Number(process.env.PORT) || 3000;
 
   app.use(cors());
   app.use(express.json({ limit: '50mb' }));
@@ -27,7 +27,7 @@ async function startServer() {
     try {
       const { question, userOption, correctOption } = req.body;
       
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
+      const genAI = new (GoogleGenAI as any)(process.env.GEMINI_API_KEY || '');
       let prompt = '';
       
       if (!userOption) {
@@ -38,8 +38,9 @@ async function startServer() {
         prompt = `Câu hỏi CFA: "${question}"\nNgười dùng đã chọn đúng đáp án "${correctOption}". Hãy phân tích chuyên sâu thêm một chút về phần lý thuyết này bằng tiếng Việt để giúp họ nhớ lâu hơn. Khích lệ họ.`;
       }
 
-      const response = await ai.getGenerativeModel({ model: 'gemini-1.5-flash' }).generateContent(prompt);
-      res.json({ explanation: response.response.text() });
+      const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+      const result = await model.generateContent(prompt);
+      res.json({ explanation: result.response.text() });
     } catch (error) {
       console.error('AI Explain Error:', error);
       res.status(500).json({ error: 'AI hiện đang quá tải. Vui lòng thử lại sau.' });
