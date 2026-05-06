@@ -1,28 +1,27 @@
 import path from 'path';
 import pg from 'pg';
+const { Pool } = pg;
 
 const isPostgres = !!process.env.DATABASE_URL;
 
 let db: any = null;
-let pgPool: pg.Pool | null = null;
+let pgPool: any = null;
 
 async function initDb() {
   if (isPostgres) {
     if (!pgPool) {
-      pgPool = new pg.Pool({
+      pgPool = new Pool({
         connectionString: process.env.DATABASE_URL,
         ssl: { rejectUnauthorized: false }
       });
       
-      // Auto-create tables for Postgres
       const client = await pgPool.connect();
       try {
-        await client.query(`
-          CREATE TABLE IF NOT EXISTS subjects (id TEXT PRIMARY KEY, name TEXT NOT NULL);
-          CREATE TABLE IF NOT EXISTS materials (id SERIAL PRIMARY KEY, subject_id TEXT NOT NULL, filename TEXT NOT NULL, content TEXT NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
-          CREATE TABLE IF NOT EXISTS questions (id SERIAL PRIMARY KEY, subject_id TEXT NOT NULL, question TEXT NOT NULL, options TEXT NOT NULL, answer TEXT NOT NULL, explanation TEXT NOT NULL, difficulty TEXT DEFAULT 'medium', is_favorite BOOLEAN DEFAULT false, last_practiced TIMESTAMP, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
-          CREATE TABLE IF NOT EXISTS practice_history (id SERIAL PRIMARY KEY, subject_id TEXT NOT NULL, score INTEGER NOT NULL, total INTEGER NOT NULL, duration INTEGER NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
-        `);
+        // Split queries for better compatibility
+        await client.query('CREATE TABLE IF NOT EXISTS subjects (id TEXT PRIMARY KEY, name TEXT NOT NULL)');
+        await client.query('CREATE TABLE IF NOT EXISTS materials (id SERIAL PRIMARY KEY, subject_id TEXT NOT NULL, filename TEXT NOT NULL, content TEXT NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)');
+        await client.query('CREATE TABLE IF NOT EXISTS questions (id SERIAL PRIMARY KEY, subject_id TEXT NOT NULL, question TEXT NOT NULL, options TEXT NOT NULL, answer TEXT NOT NULL, explanation TEXT NOT NULL, difficulty TEXT DEFAULT \'medium\', is_favorite BOOLEAN DEFAULT false, last_practiced TIMESTAMP, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)');
+        await client.query('CREATE TABLE IF NOT EXISTS practice_history (id SERIAL PRIMARY KEY, subject_id TEXT NOT NULL, score INTEGER NOT NULL, total INTEGER NOT NULL, duration INTEGER NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)');
 
         // Seed subjects if empty
         const countRes = await client.query('SELECT COUNT(*) FROM subjects');
