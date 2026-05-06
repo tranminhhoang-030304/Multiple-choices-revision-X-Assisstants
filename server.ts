@@ -3,7 +3,7 @@ import { createServer as createViteServer } from 'vite';
 import path from 'path';
 import cors from 'cors';
 import { GoogleGenAI } from '@google/genai';
-import db from './db';
+import db from './db.js';
 
 async function startServer() {
   const app = express();
