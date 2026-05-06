@@ -13,6 +13,41 @@ async function initDb() {
         connectionString: process.env.DATABASE_URL,
         ssl: { rejectUnauthorized: false }
       });
+      
+      // Auto-create tables for Postgres
+      const client = await pgPool.connect();
+      try {
+        await client.query(`
+          CREATE TABLE IF NOT EXISTS subjects (id TEXT PRIMARY KEY, name TEXT NOT NULL);
+          CREATE TABLE IF NOT EXISTS materials (id SERIAL PRIMARY KEY, subject_id TEXT NOT NULL, filename TEXT NOT NULL, content TEXT NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+          CREATE TABLE IF NOT EXISTS questions (id SERIAL PRIMARY KEY, subject_id TEXT NOT NULL, question TEXT NOT NULL, options TEXT NOT NULL, answer TEXT NOT NULL, explanation TEXT NOT NULL, difficulty TEXT DEFAULT 'medium', is_favorite BOOLEAN DEFAULT false, last_practiced TIMESTAMP, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+          CREATE TABLE IF NOT EXISTS practice_history (id SERIAL PRIMARY KEY, subject_id TEXT NOT NULL, score INTEGER NOT NULL, total INTEGER NOT NULL, duration INTEGER NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+        `);
+
+        // Seed subjects if empty
+        const countRes = await client.query('SELECT COUNT(*) FROM subjects');
+        if (parseInt(countRes.rows[0].count) === 0) {
+          const subjects = [
+            ['ETH', 'Ethics and Professional Standards'],
+            ['QM', 'Quantitative Methods'],
+            ['ECON', 'Economics'],
+            ['FSA', 'Financial Statement Analysis'],
+            ['CI', 'Corporate Issuers'],
+            ['EQ', 'Equity Investments'],
+            ['FI', 'Fixed Income'],
+            ['DER', 'Derivatives'],
+            ['AI', 'Alternative Investments'],
+            ['PM', 'Portfolio Management']
+          ];
+          for (const s of subjects) {
+            await client.query('INSERT INTO subjects (id, name) VALUES ($1, $2) ON CONFLICT DO NOTHING', s);
+          }
+        }
+      } catch (err) {
+        console.error('Postgres Init Error:', err);
+      } finally {
+        client.release();
+      }
     }
   } else {
     if (!db) {

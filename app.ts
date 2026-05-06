@@ -14,7 +14,8 @@ app.get('/api/subjects', async (req, res) => {
     const subjects = await db.query('SELECT * FROM subjects');
     res.json(subjects);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch subjects' });
+    console.error('Subjects Error:', error);
+    res.status(500).json({ error: 'Failed to fetch subjects', details: (error as any).message });
   }
 });
 
@@ -89,20 +90,21 @@ app.get('/api/stats', async (req, res) => {
   try {
     const subjectStats = await db.query(`
       SELECT s.id, s.name, 
-             COUNT(q.id) as questionCount,
-             COALESCE(SUM(h.score), 0) as totalCorrect,
-             COALESCE(SUM(h.total), 0) as totalAttempted
+             COUNT(DISTINCT q.id) as "questionCount",
+             COALESCE(SUM(h.score), 0) as "totalCorrect",
+             COALESCE(SUM(h.total), 0) as "totalAttempted"
       FROM subjects s
       LEFT JOIN questions q ON s.id = q.subject_id
       LEFT JOIN practice_history h ON s.id = h.subject_id
-      GROUP BY s.id
+      GROUP BY s.id, s.name
     `);
 
     const recentHistory = await db.query('SELECT * FROM practice_history ORDER BY created_at DESC LIMIT 10');
 
     res.json({ subjectStats, recentHistory });
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch stats' });
+    console.error('Stats Error:', error);
+    res.status(500).json({ error: 'Failed to fetch stats', details: (error as any).message });
   }
 });
 
